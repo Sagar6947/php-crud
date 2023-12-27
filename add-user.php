@@ -12,9 +12,9 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
 
     $insert = mysqli_query($con, "INSERT INTO `user`(`name`, `number`, `email`) VALUES ('$name','$number','$email')");
-    if($insert){
-        echo "Form inserted successfully";
-    }else{
+    if ($insert) {
+        header('Location: user-list.php');
+    } else {
         echo "error";
     }
 
@@ -58,7 +58,7 @@ $myArray = [
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">User List</a>
+                        <a class="nav-link active" aria-current="page" href="user-list.php">User List</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
