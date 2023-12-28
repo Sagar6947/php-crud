@@ -49,6 +49,7 @@ $selectData = mysqli_query($con, "SELECT * FROM `user`");
                         <th scope="col">Name</th>
                         <th scope="col">Number</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,6 +69,10 @@ $selectData = mysqli_query($con, "SELECT * FROM `user`");
                             </td>
                             <td>
                                 <?php echo $getData['email'] ?>
+                            </td>
+                            <td>
+                                <a href="edit-user.php?id=<?php echo $getData['id'] ?>" class="btn btn-success">Edit </a>
+                                <a href="delete-user.php?id=<?php echo $getData['id'] ?>" class="btn btn-danger">Delete </a>
                             </td>
                         </tr>
                         <?php
